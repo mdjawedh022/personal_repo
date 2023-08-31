@@ -1,4 +1,4 @@
-.modal-conatainer{
+.modal-container{
     position: fixed;
     z-index: 1;
     left: 0;
@@ -19,4 +19,11 @@ width: 25em;
 .modal .btn {
     display: block;
     margin: auto;
+}
+.error{
+    background-color: #f8d7da;
+    color: #df4759;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
 }

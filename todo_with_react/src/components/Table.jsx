@@ -1,9 +1,9 @@
 import React from "react";
 import "./Table.css";
-import {BsFillTrashFill,BsFillPencilFill} from "react-icons/bs"
-const Table = () => {
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
+const Table = ({ rows,deleteRow }) => {
   return (
-    <div  className="table-wrapper">
+    <div className="table-wrapper">
       <table className="table">
         <thead>
           <tr>
@@ -14,36 +14,23 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-            <tr>
-             <td>Home</td>
-             <td>This is the main Page 1</td>
-             <td><span className="label label-live">Live</span></td>
-             <td><span className="actions">
-                <BsFillTrashFill className="delete-btn"/>
-                <BsFillPencilFill/>
+          {rows.map((row, i) => {
+          const statusChar=row.status.charAt(0).toUpperCase()+row.status.slice(1)
+            return (
+            <tr key={i}>
+              <td>{row.page}</td>
+              <td className="expand">{row.description}</td>
+              <td>
+                <span className={`label label-${row.status}`}>{statusChar}</span>
+              </td>
+              <td>
+                <span className="actions">
+                  <BsFillTrashFill className="delete-btn" onClick={()=>deleteRow(i)} />
+                  <BsFillPencilFill />
                 </span>
-                </td>
+              </td>
             </tr>
-            <tr>
-             <td>page 2</td>
-             <td>This is the main Page 2</td>
-             <td><span className="label label-draft">Draft</span></td>
-             <td><span className="actions">
-                <BsFillTrashFill className="delete-btn"/>
-                <BsFillPencilFill/>
-                </span>
-                </td>
-            </tr>
-            <tr>
-             <td>page 3</td>
-             <td>This is the main Page 3</td>
-             <td><span className="label label-error">Error</span></td>
-             <td><span className="actions">
-                <BsFillTrashFill className="delete-btn"/>
-                <BsFillPencilFill/>
-                </span>
-                </td>
-            </tr>
+         ) })}
         </tbody>
       </table>
     </div>
