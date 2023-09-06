@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Modal.css";
 
-const Modal = ({ closeModal,onSubmit }) => {
-  const [formState,SetFormState]=useState({
+const Modal = ({ closeModal,onSubmit,defualtValue}) => {
+  const [formState,SetFormState]=useState(defualtValue || {
     page:"",
     description:"",
     status:"live",
