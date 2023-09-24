@@ -1,3 +1,7 @@
+<?php
+require('connect.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,28 +29,28 @@
     <!-- ----------------------form------------------------ -->
     <div class="popup-container" id="login-popup">
         <div class="popup">
-            <form action="">
+            <form action="login_register.php" method="POST">
                 <h2><span>User Login</span>
                     <button type="reset" onclick="popup('login-popup')">X</button>
                 </h2>
-                <input type="text" placeholder="e-mail or Username" />
-                <input type="password" placeholder="password" />
-                <button type="submit" class="login-btn">Login</button>
+                <input type="text" placeholder="e-mail or Username" name="email_username"/>
+                <input type="password" placeholder="password" name="password"/>
+                <button type="submit" class="login-btn" name="login">Login</button>
             </form>
         </div>
     </div>
     <!-- --------------register------------------ -->
     <div class="popup-container" id="register-popup">
         <div class="register popup">
-            <form action="">
+            <form action="login_register.php" method="POST">
                 <h2><span>User  Register</span>
                     <button type="reset" onclick="popup('register-popup')">X</button>
                 </h2>
-                <input type="text" placeholder="Full Name" />
-                <input type="text" placeholder="Username" />
-                <input type="text" placeholder="E-mail" />
-                <input type="password" placeholder="Password" />
-                <button type="submit" class="register-btn">Register</button>
+                <input type="text" placeholder="Full Name" name="fullname"/>
+                <input type="text" placeholder="Username" name="username"/>
+                <input type="text" placeholder="E-mail" name="email"/>
+                <input type="password" placeholder="Password" name="password"/>
+                <button type="submit" class="register-btn" name="register">Register</button>
             </form>
         </div>
     </div>
